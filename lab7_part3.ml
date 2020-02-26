@@ -68,14 +68,14 @@ module IntListStack =
        raising the EmptyStack exception if there is no element to be
        returned. *)
     let top (s : stack) : int = match s with
-      | [] -> raise (Invalid_argument "dequeue: empty queue")
+      | [] -> raise (EmptyStack)
       | hd :: tl -> hd
 
     (* pop s -- Returns a stack with the topmost element from s
        removed, raising the EmptyStack exception if there is no
        element to be removed. *)
     let pop (s : stack) : stack = match s with
-      | [] -> raise (Invalid_argument "dequeue: empty queue")
+      | [] -> raise (EmptyStack)
       | hd :: tl -> tl
   end ;;
 
